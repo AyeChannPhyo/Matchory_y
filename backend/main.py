@@ -32,7 +32,7 @@ def get_connection():
             host="localhost",
             database="Matchory",
             user="postgres",
-            password="1234"
+            password="123456"
         )
     return conn
 
