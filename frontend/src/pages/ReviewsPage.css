@@ -1,0 +1,136 @@
+.reviews-page { padding: 36px 40px; }
+
+.reviews-layout {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 28px;
+  align-items: start;
+}
+
+.reviews-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.review-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  display: flex;
+  gap: 16px;
+  padding: 16px;
+  transition: border-color 0.2s;
+}
+.review-card:hover { border-color: var(--border2); }
+
+.review-card img {
+  width: 64px;
+  height: 80px;
+  border-radius: 8px;
+  object-fit: cover;
+  background: var(--surface2);
+  flex-shrink: 0;
+}
+
+.review-card-body { flex: 1; }
+
+.review-card-body h2 {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+
+.review-stars {
+  display: flex;
+  gap: 3px;
+  margin-bottom: 8px;
+}
+
+.star-filled { color: var(--accent); font-size: 14px; }
+.star-empty  { color: var(--muted2); font-size: 14px; }
+
+.review-comment {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.55;
+  margin-bottom: 10px;
+}
+
+.review-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.review-date { font-size: 12px; color: var(--muted2); }
+
+/* WRITE REVIEW PANEL */
+.write-panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 22px;
+  position: sticky;
+  top: 20px;
+}
+
+.write-panel h2 {
+  font-family: var(--font-display);
+  font-size: 22px;
+  letter-spacing: 1px;
+  color: var(--text);
+  margin-bottom: 18px;
+}
+
+.write-panel .field {
+  margin-bottom: 14px;
+}
+
+.write-panel label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--muted);
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.star-picker {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+
+.star-picker button {
+  background: none;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  opacity: 0.35;
+  transition: opacity 0.15s, transform 0.15s;
+}
+.star-picker button.lit { opacity: 1; }
+.star-picker button:hover { transform: scale(1.2); }
+
+textarea {
+  resize: vertical;
+  min-height: 100px;
+  line-height: 1.55;
+}
+
+.empty-reviews {
+  text-align: center;
+  padding: 48px 20px;
+  color: var(--muted2);
+  font-size: 14px;
+}
+.empty-reviews p:first-child { font-size: 28px; margin-bottom: 8px; }
+
+@media(max-width: 900px) {
+  .reviews-layout { grid-template-columns: 1fr; }
+}

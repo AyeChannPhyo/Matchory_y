@@ -1,0 +1,64 @@
+.card{
+  background:white;
+  border-radius:25px;
+  padding:20px;
+  box-shadow:0 4px 20px rgba(0,0,0,0.05);
+  transition:0.3s;
+}
+
+.card:hover{
+  transform:translateY(-5px);
+}
+
+.thumbnail{
+  height:180px;
+  background:linear-gradient(
+    135deg,
+    #69c7b8,
+    #7b6df6
+  );
+
+  border-radius:20px;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  color:white;
+  font-size:28px;
+  font-weight:700;
+
+  margin-bottom:20px;
+}
+
+.card h3{
+  font-size:22px;
+  margin-bottom:12px;
+}
+
+.card p{
+  color:#666;
+  margin-bottom:10px;
+}
+
+.bookmarkBtn{
+  margin-top:16px;
+
+  width:100%;
+  border:none;
+
+  padding:14px;
+
+  border-radius:999px;
+
+  background:linear-gradient(
+    135deg,
+    #69c7b8,
+    #7b6df6
+  );
+
+  color:white;
+
+  font-size:16px;
+  cursor:pointer;
+}
