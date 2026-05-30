@@ -6,7 +6,7 @@ import { useAuth } from "../AuthContext";
 const BASE = process.env.REACT_APP_API_URL || "http://127.0.0.1:8000";
 
 const GENRES = ["", "로맨스", "액션", "판타지", "드라마", "스릴러", "개그", "일상", "스포츠", "감성", "무협/사극"];
-const AGE_GROUPS = ["", "전체연령가", "12세 이용가", "15세 이용가", "18세 이용가"];
+const AGE_GROUPS = ["전체연령가", "12세 이용가", "15세 이용가", "18세 이용가"];
 
 function SearchPage() {
   const { user } = useAuth();
@@ -14,7 +14,7 @@ function SearchPage() {
   const [query, setQuery] = useState("");
   const [genre, setGenre] = useState("");
   const [minRating, setMinRating] = useState("");
-  const [ageGroup, setAgeGroup] = useState("");
+  const [ageGroup, setAgeGroup] = useState("전체연령가");
   const [completed, setCompleted] = useState("");
   const [loading, setLoading] = useState(false);
   const [bookmarkedIds, setBookmarkedIds] = useState([]);
@@ -107,7 +107,7 @@ function SearchPage() {
         <label className="filter-label">
           Age Rating
           <select value={ageGroup} onChange={e => setAgeGroup(e.target.value)}>
-            {AGE_GROUPS.map(a => <option key={a} value={a}>{a || "Any age"}</option>)}
+            {AGE_GROUPS.map(a => <option key={a} value={a}>{a}</option>)}
           </select>
         </label>
 
