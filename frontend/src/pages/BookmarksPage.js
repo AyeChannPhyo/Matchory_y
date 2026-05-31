@@ -3,6 +3,9 @@ import "./BookmarksPage.css";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../AuthContext";
 
+const BASE = process.env.REACT_APP_API_URL || "http://127.0.0.1:8000";
+
+
 function BookmarksPage() {
   const { user } = useAuth();
   const [bookmarks, setBookmarks] = useState([]);
@@ -12,9 +15,9 @@ function BookmarksPage() {
 
   useEffect(() => {
 
-  if (!user?.user_id) return;
+  if (!user?.user_id) return
 
-  fetch(`https://matchory-y.onrender.com/bookmarks/${user.user_id}`)
+  fetch(`${BASE}/bookmarks/${user?.user_id}`)
     .then(res => res.json())
     .then(data => {
       setBookmarks(data);
@@ -71,7 +74,7 @@ function BookmarksPage() {
                 <div className="rating">★ {toon.rating}</div>
                 <button className="remove-btn" onClick={(e) => {
                   e.stopPropagation();
-                  fetch(`https://matchory-y.onrender.com/delete-bookmark/${toon.bookmark_id}`, { method: "DELETE" })
+                  fetch(`${BASE}/delete-bookmarks/${toon.bookmark_id}`, { method: "DELETE" })
                     .then(() => setBookmarks(bookmarks.filter(b => b.bookmark_id !== toon.bookmark_id)));
                 }}>✕ Remove</button>
               </div>
