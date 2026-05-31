@@ -11,11 +11,18 @@ function BookmarksPage() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch(`http://127.0.0.1:8000/bookmarks/${user?.user_id}`)
-      .then(res => res.json())
-      .then(data => { setBookmarks(data); setLoading(false); })
-      .catch(() => setLoading(false));
-  }, []);
+
+  if (!user?.user_id) return;
+
+  fetch(`http://127.0.0.1:8000/bookmarks/${user.user_id}`)
+    .then(res => res.json())
+    .then(data => {
+      setBookmarks(data);
+      setLoading(false);
+    })
+    .catch(() => setLoading(false));
+
+}, [user]);
 
   const filtered = bookmarks.filter(b =>
     b.title?.toLowerCase().includes(search.toLowerCase())
