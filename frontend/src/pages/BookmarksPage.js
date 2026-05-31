@@ -45,11 +45,6 @@ function BookmarksPage() {
             value={search}
             onChange={e => setSearch(e.target.value)}
           />
-          <select>
-            <option>Recently Added</option>
-            <option>Top Rated</option>
-            <option>A–Z</option>
-          </select>
         </div>
       </div>
 

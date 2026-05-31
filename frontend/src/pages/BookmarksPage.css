@@ -11,9 +11,7 @@
 
 .page-controls {
   display: flex;
-  gap: 10px;
   align-items: center;
-  flex-wrap: wrap;
 }
 
 .page-controls input { width: 200px; }
