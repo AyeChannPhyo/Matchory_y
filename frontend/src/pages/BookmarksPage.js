@@ -14,7 +14,7 @@ function BookmarksPage() {
 
   if (!user?.user_id) return;
 
-  fetch(`http://127.0.0.1:8000/bookmarks/${user.user_id}`)
+  fetch(`https://matchory-y.onrender.com/bookmarks/${user.user_id}`)
     .then(res => res.json())
     .then(data => {
       setBookmarks(data);
@@ -71,7 +71,7 @@ function BookmarksPage() {
                 <div className="rating">★ {toon.rating}</div>
                 <button className="remove-btn" onClick={(e) => {
                   e.stopPropagation();
-                  fetch(`http://127.0.0.1:8000/delete-bookmark/${toon.bookmark_id}`, { method: "DELETE" })
+                  fetch(`https://matchory-y.onrender.com/delete-bookmark/${toon.bookmark_id}`, { method: "DELETE" })
                     .then(() => setBookmarks(bookmarks.filter(b => b.bookmark_id !== toon.bookmark_id)));
                 }}>✕ Remove</button>
               </div>
